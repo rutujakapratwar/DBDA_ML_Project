@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Price Predictor</h1>
+        <form method="POST">
+            <label for="stock">Select Stock:</label>
+            <select name="stock" id="stock">
+                <option value="Reliance">Reliance</option>
+                <option value="HDFC">HDFC</option>
+                <option value="Infosys">Infosys</option>
+                <option value="SBI">SBI</option>
+                <option value="M&M">M&M</option>
+                <option value="TataMotors">Tata Motors</option>
+                <option value="Wipro">Wipro</option>
+                <option value="Titan">Titan</option>
+            </select>
+            <br>
+            <label for="start_date">Start Date:</label>
+            <input type="date" name="start_date" id="start_date" min="1996-01-01" max="2024-10-29" required>
+            <br>
+            <label for="end_date">End Date:</label>
+            <input type="date" name="end_date" id="end_date" min="1996-01-01" max="2024-10-29" required>
+            <br>
+            <button type="submit">Get Forecast</button>
+        </form>
+
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+
+        {% if predicted_prices %}
+            <div class="forecast-table">
+                <h2>7-Day Predicted Prices</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Predicted Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in range(7) %}
+                        <tr>
+                            <td>Day {{ i + 1 }}</td>
+                            <td>{{ predicted_prices[i] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+
+        {% if price_plot %}
+            <div class="plot-container">
+                <h2>Price with Indicators</h2>
+                <img src="{{ price_plot }}" alt="Price with Indicators">
+            </div>
+        {% endif %}
+
+        {% if candlestick_chart %}
+            <div class="candlestick-container">
+                <h2>Candlestick Chart</h2>
+                <iframe src="{{ candlestick_chart }}" width="1000" height="600"></iframe>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

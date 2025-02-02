@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f4f4f9, #e0e0f5);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Form Styles */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+select, input[type="date"], button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Error Message */
+.error {
+    color: #ff4d4d;
+    text-align: center;
+    margin: 20px;
+    font-weight: 600;
+}
+
+/* Forecast Table */
+.forecast-table {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.forecast-table h2 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Plot Container */
+.plot-container {
+    text-align: center;
+    margin: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.plot-container h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.plot-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Candlestick Container */
+.candlestick-container {
+    text-align: center;
+    margin: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.candlestick-container h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+iframe {
+    border: none;
+    border-radius: 8px;
+}
